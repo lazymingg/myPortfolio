@@ -1,0 +1,10 @@
+{
+    "name": "LazyMing",
+    "birthday": "2005-05-08",
+    "profession": "Full Stack Developer",
+    "description": "A passionate programmer and designer.",
+    "socials": {
+      "github": "https://github.com/nguyenvana",
+      "linkedin": "https://linkedin.com/in/nguyenvana"  
+    }
+  }
