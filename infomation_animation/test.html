@@ -5,27 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      /* Define CSS variables for colors */
+      :root {
+        --sky-blue: #8ecae6ff;
+        --blue-green: #219ebcff;
+        --prussian-blue: #023047ff;
+        --selective-yellow: #ffb703ff;
+        --ut-orange: #fb8500ff;
+
+        /* Add complementary colors */
+        --text-color: #f8f8f2;
+        --background-color: #282a36;
+        --highlight: #ff79c6;
+        --string-color: #ffb86c;
+      }
+
       html {
         font-size: 10px;
       }
-      /* Dành cho màn hình nhỏ hơn 480px */
+
       @media (max-width: 480px) {
-        /* CSS dành cho điện thoại */
         html {
           font-size: 6px;
         }
       }
 
-      /* Dành cho màn hình nhỏ hơn hoặc bằng 768px */
       @media (max-width: 768px) {
-        /* CSS dành cho điện thoại và máy tính bảng */
         html {
           font-size: 8px;
         }
-
       }
 
-      /* Dành cho màn hình từ 1024px trở lên */
       @media (min-width: 1024px) {
         html {
           font-size: 10px;
@@ -33,8 +43,8 @@
       }
 
       body {
-        background-color: #282a36;
-        color: #f8f8f2;
+        background-color: white;
+        color: var(--text-color);
         font-family: "Courier New", Courier, monospace;
         margin: 0;
         padding: 0;
@@ -59,31 +69,41 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: #44475a;
+        background-color: var(--prussian-blue);
         border-radius: 1rem;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         padding: 2rem;
         width: 80%;
-        max-width: 80rem;
+        max-width: 60rem;
+        color: var(--text-color);
       }
 
       .var-highlight {
-        color: #ff79c6;
+        color: var(--text-color);
       }
 
       .string-highlight {
-        color: #ffb86c;
+        color: var(--string-color);
+      }
+      
+      .key-highlight {
+        color: var(--sky-blue);
+      }
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-width: 100%;
       }
 
       #typewriter {
         font-size: 1.6rem;
         margin: 0;
-        color: #f8f8f2;
+        color: var(--text-color);
       }
 
       #typewriter:after {
         content: "|";
-        color: #f1fa8c;
+        color: var(--selective-yellow);
         animation: blink 500ms linear infinite alternate;
       }
 
@@ -110,23 +130,19 @@
     <div id="overlay" class="overlay">
       <div id="popup" class="popup">
         <pre id="typewriter">
-<span class="var-highlight">let</span> baseInfomation = {
-    name: <span class="string-highlight">'LazyMing'</span>,
-    job Title: <span class="string-highlight">'Professional Couch Potato, Full Stack Wizard'</span>,
-    hoobies: <span class="string-highlight">'I enjoy making perfect, beautiful software, 
-            or maybe a nap first :D.'</span>,
-    Motto: <span class="string-highlight">'Perfect the small things,
-            and watch them grow into something big.'</span>
+<span class="var-highlight">let</span> <span class="key-highlight">baseInfomation</span> = {
+    <span class="key-highlight">name:</span> <span class="string-highlight">'LazyMing'</span>,
+    <span class="key-highlight">job Title:</span> <span class="string-highlight">'Professional Couch Potato, Full Stack Wizard'</span>,
+    <span class="key-highlight">hoobies:</span> <span class="string-highlight">'I enjoy making perfect, beautiful software, or maybe a nap first :D.'</span>,
+    <span class="key-highlight">Motto:</span> <span class="string-highlight">'Perfect the small things, and watch them grow into something big.'</span>
 };
 </pre>
       </div>
     </div>
-
     <script>
       function showPopup() {
         let popup = document.getElementById("popup");
         document.getElementById("overlay").style.display = "flex";
-
         popup.style.animation = "move 1s forwards";
       }
 
@@ -137,11 +153,11 @@
         t.innerHTML = "";
 
         let cursorPosition = 0,
-            tag = "",
-            writingTag = false,
-            tagOpen = false,
-            typeSpeed = 10,
-            tempTypeSpeed = 0;
+          tag = "",
+          writingTag = false,
+          tagOpen = false,
+          typeSpeed = 10,
+          tempTypeSpeed = 0;
 
         let type = function () {
           if (writingTag === true) {

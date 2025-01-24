@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      /* CSS HEX */
+      /* --sky-blue: #8ecae6ff;
+      --blue-green: #219ebcff;
+      --prussian-blue: #023047ff;
+      --selective-yellow: #ffb703ff;
+      --ut-orange: #fb8500ff; */
+
+      html {
+        font-size: 10px;
+      }
+      /* Dành cho màn hình nhỏ hơn 480px */
+      @media (max-width: 480px) {
+        /* CSS dành cho điện thoại */
+        html {
+          font-size: 6px;
+        }
+      }
+
+      /* Dành cho màn hình nhỏ hơn hoặc bằng 768px */
+      @media (max-width: 768px) {
+        /* CSS dành cho điện thoại và máy tính bảng */
+        html {
+          font-size: 8px;
+        }
+
+      }
+
+      /* Dành cho màn hình từ 1024px trở lên */
+      @media (min-width: 1024px) {
+        html {
+          font-size: 10px;
+        }
+      }
+
+      body {
+        background-color: #282a36;
+        color: #f8f8f2;
+        font-family: "Courier New", Courier, monospace;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
       .overlay {
         display: flex;
         position: fixed;
@@ -12,49 +58,46 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.7);
       }
 
       .popup {
-        display: true;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        /* width: 300px;
-        height: 200px; */
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      }
-      /* CSS Animation (GPU-accelerated) */
-      /*CSS Animation (GPU-accelerated) */
-      .popup {
-        transform-origin: top left;
-      }
-      @keyframes move {
-        from {
-          transform: translate(-50%, -50%) scale(0.1);
-        }
-        to {
-          transform: translate(-50%, -50%) scale(1);
-        }
-    }
-    .var-highlight {
-        color: #c0ad60;
-      }
-      .string-highlight {
-        color: rgba(253, 149, 90, 0.8);
+        background-color: #44475a;
+        border-radius: 1rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        padding: 2rem;
+        width: 80%;
+        max-width: 60rem;
       }
 
+      .var-highlight {
+        color: #ff79c6;
+      }
+
+      .string-highlight {
+        color: #ffb86c;
+      }
+
+      pre {
+        white-space: pre-wrap; /* Nội dung xuống dòng nếu cần */
+        word-wrap: break-word;
+        max-width: 100%; /* Đảm bảo không tràn màn hình */
+      }
+
+
       #typewriter {
-        font-size: 2em;
+        font-size: 1.6rem;
         margin: 0;
-        font-family: "Courier New";
+        color: #f8f8f2;
       }
 
       #typewriter:after {
         content: "|";
+        color: #f1fa8c;
         animation: blink 500ms linear infinite alternate;
       }
 
@@ -66,24 +109,28 @@
           opacity: 1;
         }
       }
+
+      @keyframes move {
+        from {
+          transform: translate(-50%, -50%) scale(0.1);
+        }
+        to {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
     </style>
   </head>
   <body>
     <div id="overlay" class="overlay">
       <div id="popup" class="popup">
-<pre id="typewriter">
-<span class="var-highlight">var</span> baseInfomation = {
-    name: <span class="string-highlight">'LazyMing'</span>,
-    job Title: <span class="string-highlight">'Professional Couch Potato, Full Stack Wizard'</span>,
-    hoobies: <span class="string-highlight">'I enjoy making perfect, beautiful software, 
-    or maybe a nap first :D.'</span>,
-    Motto: <span class="string-highlight">'Perfect the small things,
-    and watch them grow into something big.'</span>
+        <pre id="typewriter">
+<span class="var-highlight">let</span> <span class="key-highlight">baseInfomation</span> = {
+    <span class="key-highlight">name:</span> <span class="string-highlight">'LazyMing'</span>,
+    <span class="key-highlight">job Title:</span> <span class="string-highlight">'Professional Couch Potato, Full Stack Wizard'</span>,
+    <span class="key-highlight">hoobies:</span> <span class="string-highlight">'I enjoy making perfect, beautiful software, or maybe a nap first :D.'</span>,
+    <span class="key-highlight">Motto:</span> <span class="string-highlight">'Perfect the small things, and watch them grow into something big.'</span>
 };
 </pre>
-        </div>
-      </div>
-    </div>
     <script>
       function showPopup() {
         let popup = document.getElementById("popup");
@@ -93,6 +140,7 @@
       }
 
       showPopup();
+
       function setupTypewriter(t) {
         let HTML = t.innerHTML;
         t.innerHTML = "";
@@ -121,27 +169,29 @@
               tag += HTML[cursorPosition];
             }
           }
+
           if (!writingTag && tagOpen) {
             tag.innerHTML += HTML[cursorPosition];
           }
+
           if (!writingTag && !tagOpen) {
             if (HTML[cursorPosition] === " ") {
               tempTypeSpeed = 0;
             } else {
-              tempTypeSpeed = Math.random() * typeSpeed + 20;
+              tempTypeSpeed = Math.random() * typeSpeed + 10;
             }
             t.innerHTML += HTML[cursorPosition];
           }
+
           if (writingTag === true && HTML[cursorPosition] === ">") {
-            tempTypeSpeed = Math.random() * typeSpeed + 20;
+            tempTypeSpeed = Math.random() * typeSpeed + 10;
             writingTag = false;
-                if (tagOpen) {
-                let newSpan = document.createElement("span");
-                t.appendChild(newSpan);
-                newSpan.innerHTML = tag;
-                tag = newSpan.firstChild;
-                console.log(tag);
-                }
+            if (tagOpen) {
+              let newSpan = document.createElement("span");
+              t.appendChild(newSpan);
+              newSpan.innerHTML = tag;
+              tag = newSpan.firstChild;
+            }
           }
 
           cursorPosition += 1;
