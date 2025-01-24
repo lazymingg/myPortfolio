@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      html {
+        font-size: 10px;
+      }
+      /* Dành cho màn hình nhỏ hơn 480px */
+      @media (max-width: 480px) {
+        /* CSS dành cho điện thoại */
+        html {
+          font-size: 6px;
+        }
+      }
+
+      /* Dành cho màn hình nhỏ hơn hoặc bằng 768px */
+      @media (max-width: 768px) {
+        /* CSS dành cho điện thoại và máy tính bảng */
+        html {
+          font-size: 8px;
+        }
+
+      }
+
+      /* Dành cho màn hình từ 1024px trở lên */
+      @media (min-width: 1024px) {
+        html {
+          font-size: 10px;
+        }
+      }
+
       body {
         background-color: #282a36;
         color: #f8f8f2;
@@ -33,11 +60,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: #44475a;
-        border-radius: 10px;
+        border-radius: 1rem;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-        padding: 20px;
+        padding: 2rem;
         width: 80%;
-        max-width: 800px;
+        max-width: 80rem;
       }
 
       .var-highlight {
@@ -49,7 +76,7 @@
       }
 
       #typewriter {
-        font-size: 1.5em;
+        font-size: 1.6rem;
         margin: 0;
         color: #f8f8f2;
       }
