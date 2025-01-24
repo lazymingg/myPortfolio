@@ -6,13 +6,24 @@
     <title>Document</title>
     <style>
       /* Define CSS variables for colors */
+       /* more color */
+      /* #222831
+      #393E46
+      #00ADB5
+      #EEEEEE */
       :root {
         --sky-blue: #8ecae6ff;
         --blue-green: #219ebcff;
         --prussian-blue: #023047ff;
         --selective-yellow: #ffb703ff;
         --ut-orange: #fb8500ff;
+        
+        --gray-background: #EEEEEE;
+        --dark-background: #393E46;
+        --light-background: #222831;
+        --highlight-background: #00ADB5;
 
+        
         /* Add complementary colors */
         --text-color: #f8f8f2;
         --background-color: #282a36;
@@ -43,8 +54,8 @@
       }
 
       body {
-        background-color: white;
-        color: var(--text-color);
+        background-color: var(--gray-background);
+        color: var(--prussian-blue);
         font-family: "Courier New", Courier, monospace;
         margin: 0;
         padding: 0;
@@ -69,7 +80,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: var(--prussian-blue);
+        background-color: var(--light-background);
         border-radius: 1rem;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         padding: 2rem;
@@ -79,15 +90,15 @@
       }
 
       .var-highlight {
-        color: var(--text-color);
+        color: var(--selective-yellow);
       }
 
       .string-highlight {
-        color: var(--string-color);
+        color: var(--sky-blue);
       }
       
       .key-highlight {
-        color: var(--sky-blue);
+        color: var(--gray-background);
       }
       pre {
         white-space: pre-wrap;
