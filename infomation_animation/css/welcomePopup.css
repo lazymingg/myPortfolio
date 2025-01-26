@@ -1,0 +1,70 @@
+.overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--light-background);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    width: 80%;
+    max-width: 60rem;
+    color: var(--text-color);
+  }
+
+  .var-highlight {
+    color: var(--selective-yellow);
+  }
+
+  .string-highlight {
+    color: var(--sky-blue);
+  }
+
+  .key-highlight {
+    color: var(--gray-background);
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
+  #typewriter {
+    font-size: 1.6rem;
+    margin: 0;
+    color: var(--text-color);
+  }
+
+  #typewriter:after {
+    content: "|";
+    color: var(--selective-yellow);
+    animation: blink 500ms linear infinite alternate;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes move {
+    from {
+      transform: translate(-50%, -50%) scale(0.1);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
