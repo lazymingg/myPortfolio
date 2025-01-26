@@ -78,7 +78,16 @@ function showPopup() {
   
   let typewriter = setupTypewriter(typer);
   
+  // Access the button element by its ID
+  const button = document.getElementById("closeButton");
+
+  // Define what happens when the button is clicked
+  button.addEventListener('click', function() {
+    hidePopup();
+  });
+
   typewriter.type();
-  // showPopup();
+  showPopup();
   hidePopup();
+
   
