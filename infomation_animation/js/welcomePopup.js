@@ -87,7 +87,7 @@ function showPopup() {
   });
 
   typewriter.type();
-  showPopup();
+  // showPopup();
   hidePopup();
 
   
