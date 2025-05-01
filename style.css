@@ -60,6 +60,11 @@ html {
     .socialBar {
       display: none;
     }
+    .mainContentContainer {
+      margin: 0 1rem;
+      margin-left: 0 !important;
+      /* for the social bar */
+    }
   }
 
   @media (min-width: 1024px) {
@@ -70,6 +75,8 @@ html {
 .mainContentContainer {
   margin: 0 1rem;
   padding: 0;
+  /* for the social bar */
+  margin-left: 7rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,9 +133,11 @@ html {
 .navBar,
 .topNav {
   margin-right: 10rem;
+  padding: 1.4rem 1.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* margin-left: 3rem; */
 }
 
 /* ********************** */
@@ -305,19 +314,20 @@ html {
 /* ********************** */
 /* SOCIAL BAR **********/
 /* ********************** */
-
+.socialBarContainer {
+  display: flex;
+  /* justify-content: center; */
+  align-items: start;
+  flex-direction: row;
+  /* gap: 2rem;
+  padding: 1rem; */
+  /* background-color: var(--back-ground); */
+}
 :root {
   --back-ground: rgb(15, 23, 42);
   --brigher-text: rgb(226, 232, 240);
   --darker-text: rgb(148, 163, 184);
   --green-highlight: rgb(94, 234, 212);
-}
-.socialBar {
-  position: fixed;
-  background-color: transparent;
-  padding: 1rem;
-  bottom: 0;
-  left: 0;
 }
 .socialIcon {
   svg{
@@ -351,7 +361,7 @@ html {
 .socialBar {
   position: fixed;
   background-color: transparent;
-  padding: 1rem;
+  padding: 0rem;
   bottom: 0;
   left: 0;
 }
