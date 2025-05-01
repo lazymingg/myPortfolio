@@ -266,6 +266,26 @@
   border-radius: 1rem;
   cursor: pointer;
 }
+.socialIconInContactSection {
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--green-highlight);
+    margin: 1rem;
+    cursor: pointer;
+  }
+  svg:hover {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--brigher-text);
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 1rem;
+}
 
 /* ********************** */
 /* SOCIAL BAR **********/
