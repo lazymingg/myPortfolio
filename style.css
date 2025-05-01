@@ -245,9 +245,9 @@
   width: 50rem;
   font-size: 1.6rem;
   margin: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: +5rem;
 }
-.contactSection button {
+.contactSection a {
   font-family: "Courier New", Courier, monospace;
   padding: 2rem 4rem;
   font-size: 1.6rem;
@@ -257,7 +257,7 @@
   border-radius: 1rem;
   cursor: pointer;
 }
-.contactSection button:hover {
+.contactSection a:hover {
   padding: 2rem 4rem;
   font-size: 1.6rem;
   background-color: var(--green-highlight);
