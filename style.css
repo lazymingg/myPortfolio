@@ -61,7 +61,6 @@ html {
       display: none;
     }
     .mainContentContainer {
-      margin: 0 1rem;
       margin-left: 0 !important;
       /* for the social bar */
     }
@@ -73,7 +72,7 @@ html {
     }
   }
 .mainContentContainer {
-  margin: 0 1rem;
+  /* margin: 0 1rem; */
   padding: 0;
   /* for the social bar */
   margin-left: 7rem;
@@ -133,11 +132,13 @@ html {
 .navBar,
 .topNav {
   margin-right: 10rem;
-  padding: 1.4rem 1.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* margin-left: 3rem; */
+}
+.navBar {
+  margin-left: 3rem;
 }
 
 /* ********************** */
