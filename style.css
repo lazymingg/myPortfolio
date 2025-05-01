@@ -28,6 +28,13 @@
 /* ******************** */
 /* NAVBAR **********/
 /* ******************** */
+#hero-link,
+#skill-link,
+#project-link,
+#contact-link {
+  scroll-margin-top: 8rem;
+}
+
 .topNav {
   background-color: rgba(15, 23, 42, 0.9);
   backdrop-filter: blur(10px); /* Làm mờ phần tử phía sau */
