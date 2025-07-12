@@ -299,6 +299,9 @@ body {
 
 .projectCard {
   border-radius: var(--border-radius-sm);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   display: flex;
   gap: var(--spacing-md);
   align-items: center;
